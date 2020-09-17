@@ -1,4 +1,11 @@
 {
+    "name": "php unit test",
+    "description": "php unit test",
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
     "require-dev": {
         "phpunit/phpunit": "^9"
     }
