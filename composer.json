@@ -1,6 +1,4 @@
 {
-    "name": "php unit test",
-    "description": "php unit test",
     "autoload": {
         "classmap": [
             "src/"
