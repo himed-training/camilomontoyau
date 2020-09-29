@@ -1,0 +1,13 @@
+DD/MM/AAAA
+
+1. Tiene dos slash?
+2. El tamaño del texto es 10?
+3. 2 números antes del primer slash?
+3.b. 2 números despues del primer slash?
+4. Los dos primeros digitos deben ser menores o iguales a 31
+5. Los dos segundos digitos deben ser menores o iguales a 12
+6. Cuantos dias tiene el mes?
+7. Es bisiesto? <= formula
+8. después del segundo / cuatro digitos
+9. todos los numeros deben ser mayores a cero
+10. deben ser caracteres numericos + / => expresiones regulares
