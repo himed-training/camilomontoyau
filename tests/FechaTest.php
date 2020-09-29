@@ -12,4 +12,9 @@ final class FechaTest extends TestCase
         $mifecha = new Fecha('20/09/2020');
         $this->assertEquals(substr_count($mifecha->fecha,'/'), 2);
     }
+
+    public function testElTamanioDeFechaEs10() {
+        $mifecha = new Fecha('20/09/2020');
+        $this->assertEquals(strlen($mifecha->fecha), 10);
+    }
 }
