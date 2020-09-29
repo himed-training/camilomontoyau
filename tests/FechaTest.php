@@ -17,4 +17,11 @@ final class FechaTest extends TestCase
         $mifecha = new Fecha('20/09/2020');
         $this->assertEquals(strlen($mifecha->fecha), 10);
     }
+
+    public function testDosDigitosNumericosAntesDelPrimerSlash() {
+        $mifecha = new Fecha('20/09/2020');
+        $fechaPedazos = explode('/', $mifecha->fecha);
+        $this->assertEquals(strlen($fechaPedazos[0]), 2);
+        $this->assertTrue(is_numeric($fechaPedazos[0]));
+    }
 }
