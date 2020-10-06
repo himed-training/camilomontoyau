@@ -53,12 +53,12 @@ RUN apt-get update && \
     a2enmod expires && \
     chmod +x /install-composer.sh && \
     /install-composer.sh && \
-    mv composer.phar /usr/bin/composer && \
-    useradd -ms /bin/bash newuser
+    mv composer.phar /usr/bin/composer
 
 
 ADD ./supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
 ADD apache-default.conf /etc/apache2/sites-available/000-default.conf
+ADD ./lib /home/lib
 
 VOLUME ["/var/www/html", "/var/log/apache2"]
 
@@ -66,8 +66,8 @@ EXPOSE 80
 
 CMD ["/usr/bin/supervisord", "-n"]
 
-COPY ./lib /home/newuser/lib
-USER newuser
-WORKDIR /home/newuser
+# COPY ./lib /home/lib
+
+WORKDIR /home/lib
 
 
