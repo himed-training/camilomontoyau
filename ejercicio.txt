@@ -1,0 +1,5 @@
+1) clase fecha no puede setear el atributo fecha si es una fecha invalida
+2) cuadrar los tests de fecha para que el punto 1 se cumpla
+3) clase paciente solo con documento, nombre y apellido
+4) clase consulta que tiene dos atributos uno tipo paciente 
+y el otro de tipo fecha (usando la clase fecha)
