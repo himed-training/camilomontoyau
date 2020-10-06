@@ -66,5 +66,8 @@ EXPOSE 80
 
 CMD ["/usr/bin/supervisord", "-n"]
 
+COPY ./lib /home/newuser/lib
 USER newuser
 WORKDIR /home/newuser
+
+
