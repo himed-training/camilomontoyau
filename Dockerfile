@@ -68,4 +68,3 @@ CMD ["/usr/bin/supervisord", "-n"]
 
 USER newuser
 WORKDIR /home/newuser
-
