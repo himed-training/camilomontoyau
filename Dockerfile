@@ -1,5 +1,4 @@
 FROM ubuntu:xenial
-MAINTAINER Leonel Baer <leonel@lysender.com>
 
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -54,7 +53,9 @@ RUN apt-get update && \
     a2enmod expires && \
     chmod +x /install-composer.sh && \
     /install-composer.sh && \
-    mv composer.phar /usr/bin/composer
+    mv composer.phar /usr/bin/composer && \
+    useradd -ms /bin/bash newuser
+
 
 ADD ./supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
 ADD apache-default.conf /etc/apache2/sites-available/000-default.conf
@@ -64,3 +65,7 @@ VOLUME ["/var/www/html", "/var/log/apache2"]
 EXPOSE 80
 
 CMD ["/usr/bin/supervisord", "-n"]
+
+USER newuser
+WORKDIR /home/newuser
+
