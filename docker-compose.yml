@@ -1,0 +1,10 @@
+version: "2.1"
+
+services:
+  himed:
+    build: .
+    volumes:
+      - ./lib/:/var/www/html/
+    ports:
+      - '80:80'
+    container_name: php-himed
