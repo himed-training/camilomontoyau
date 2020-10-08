@@ -66,8 +66,6 @@ EXPOSE 80
 
 CMD ["/usr/bin/supervisord", "-n"]
 
-# COPY ./lib /home/lib
-
-WORKDIR /home/lib
+WORKDIR /var/www/html
 
 
