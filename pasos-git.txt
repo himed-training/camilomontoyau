@@ -1,0 +1,7 @@
+1) git init
+2) git add .   ===>repetir
+3) git commit -m "todo en la carpeta lib" ===>repetir
+4) git remote add origin git@xxxxxxxxxxxxx.git
+5) git push origin master ===>repetir
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
