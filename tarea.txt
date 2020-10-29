@@ -11,3 +11,6 @@ DD/MM/AAAA
 8. después del segundo / cuatro digitos
 9. todos los numeros deben ser mayores a cero
 10. deben ser caracteres numericos + / => expresiones regulares
+
+
+END point

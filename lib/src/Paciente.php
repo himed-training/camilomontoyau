@@ -1,8 +1,8 @@
 <?php
-class Paciente{
-	private $id;
-	private $nombre;
-	private $apellido;
+class Paciente {
+	public $id;
+	public $nombre;
+	public $apellido;
 
 	public function __construct($id, $nombre, $apellido)
     {  

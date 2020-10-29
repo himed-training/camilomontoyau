@@ -1,6 +1,6 @@
 <?php
 class Fecha{
-	private $fecha;
+	public $fecha;
 
 	public function __construct($fecha)
     {
