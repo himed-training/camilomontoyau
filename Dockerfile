@@ -5,8 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Configure services
-ADD ./start-apache2.sh /start-apache2.sh
-ADD ./install-composer.sh /install-composer.sh
+ADD ./configs/start-apache2.sh /start-apache2.sh
+ADD ./configs/install-composer.sh /install-composer.sh
 
 # Combined RUN commands to reduce layer size
 RUN apt-get update && \
@@ -58,9 +58,9 @@ RUN apt-get update && \
     mv composer.phar /usr/bin/composer
 
 
-ADD ./supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
-ADD apache-default.conf /etc/apache2/sites-available/000-default.conf
-ADD ./php.ini /etc/php/5.6/apache2/php.ini
+ADD ./configs/supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
+ADD ./configs/apache-default.conf /etc/apache2/sites-available/000-default.conf
+ADD ./configs/php.ini /etc/php/5.6/apache2/php.ini
 
 VOLUME ["/var/www/html", "/var/log/apache2"]
 
