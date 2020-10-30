@@ -39,6 +39,8 @@ RUN apt-get update && \
     curl \
     apache2 \
     libapache2-mod-php5.6 \
+    vim \
+    nano \
     openssl && \
     apt-get clean && \
     chmod 755 /*.sh && \
@@ -58,7 +60,7 @@ RUN apt-get update && \
 
 ADD ./supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
 ADD apache-default.conf /etc/apache2/sites-available/000-default.conf
-ADD ./lib /home/lib
+ADD ./php.ini /etc/php/5.6/apache2/php.ini
 
 VOLUME ["/var/www/html", "/var/log/apache2"]
 
