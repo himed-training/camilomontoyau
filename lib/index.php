@@ -28,7 +28,7 @@
   $id = $data->id;
   $nombre = $data->nombre;
   $apellido = $data->apellido;
-  $fecha = date("Y/m/d");
+  $fecha = date("d/m/Y");
 
   $consulta = new Consulta($id, $nombre, $apellido, $fecha);
   
