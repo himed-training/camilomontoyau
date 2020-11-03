@@ -8,7 +8,7 @@ class Consulta{
 
 	public function __construct($id, $nombre, $apellido, $fecha)
     {           
-        $this->fecha = new Fecha($fecha);        
+        $this->fecha = new Fecha($fecha);
        	$this->paciente = new Paciente($id, $nombre, $apellido);
     }
 
