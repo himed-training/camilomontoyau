@@ -6,8 +6,10 @@ class Fecha{
     {
         if ($this->fechaEsValida($fecha)){
         	$this->fecha = $fecha;
-        }
-    }
+				} else {
+					throw new Exception('Fecha inválida');
+				}
+		}
 
 	public function fechaCantidadSlash($fecha){
 		return substr_count($fecha, '/') == 2;
