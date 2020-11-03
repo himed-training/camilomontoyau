@@ -30,13 +30,21 @@
   $apellido = $data->apellido;
   $fecha = date("d/m/Y");
 
-  $consulta = new Consulta($id, $nombre, $apellido, $fecha);
-  
-  if($consulta) {
-    http_response_code(200);
-    echo json_encode($consulta);
+  try {
+    $consulta = new Consulta($id, $nombre, $apellido, $fecha);
+    if($consulta) {
+      http_response_code(200);
+      echo json_encode($consulta);
+      exit;
+    }  
+  } catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(array("error"=>$e->getMessage())); 
     exit;
   }
+  
+  
+  
   
 
   
