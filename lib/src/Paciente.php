@@ -6,9 +6,13 @@ class Paciente {
 
 	public function __construct($id, $nombre, $apellido)
     {  
-        $this->id       = $id;
-        $this->nombre   = $nombre;
-        $this->apellido = $apellido;        
+        if($this->esValido($id, $nombre, $apellido)) {
+            $this->id       = $id;
+            $this->nombre   = $nombre;
+            $this->apellido = $apellido;
+        } else {
+            throw new Exception('Paciente inválido');
+        }
     }
 
     public function getId() {
@@ -23,7 +27,7 @@ class Paciente {
         return $this -> apellido;
     }
 
-    public function pacienteEsValido($id, $nombre, $apellido){
+    public function esValido($id, $nombre, $apellido){
     	return $id!="" && $nombre!="" && $apellido!="";    	
     }
 }
