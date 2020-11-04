@@ -1,0 +1,7 @@
+1  cat {nombre de archivo} ===> para ver el contenido de un archivo desde la terminal
+2  composer test ===> ejecuta los tests siempre y cuando tenga el scrip test en composer.json
+3  composer install ===> instala los paquetes que tenga en el composer.json
+4  composer require guzzlehttp/guzzle:~6.0  ===> instala el cliente http de guzzle
+5  docker-compose up -d  ===> levanta el contenedor de docker
+6  docker exec -it php-himed /bin/bash  ===> me conecto por terminal al contenedor de docker
+7  git clone https://github.com/himed-training/camilomontoyau.git  ===> clono el repositorio con los ejercicios
