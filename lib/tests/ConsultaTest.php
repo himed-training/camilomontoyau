@@ -25,4 +25,22 @@ final class ConsultaTest extends TestCase
       $this->assertEquals($json_consulta->paciente->id, 'id');
       $this->assertEquals($json_consulta->fecha->fecha, date("d/m/Y"));
     }    
+    
+    public function testPostCrearConsultaMuestraErrorSinId() {
+      $client = new Client();
+      $response = $client->post('http://localhost', [
+        'json' => [ 
+          'id'=> '',
+          'nombre'=> 'nombre',
+          'apellido'=> 'apellido'
+        ]
+      ]);
+      var_dump($response->getStatusCode());
+      $this->assertEquals($response->getStatusCode(), 400);
+      //$json_consulta = json_decode($response->getBody());
+      /* $this->assertEquals($json_consulta->paciente->nombre, 'nombre');
+      $this->assertEquals($json_consulta->paciente->apellido, 'apellido');
+      $this->assertEquals($json_consulta->paciente->id, 'id');
+      $this->assertEquals($json_consulta->fecha->fecha, date("d/m/Y")); */
+    }    
 }
