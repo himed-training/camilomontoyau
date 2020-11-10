@@ -6,10 +6,10 @@ class Consulta{
 	public $paciente;
 	public $fecha;	
 
-	public function __construct($id, $nombre, $apellido, $fecha)
+	public function __construct($id, $nombre, $apellido, $documento, $fecha)
     {           
         $this->fecha = new Fecha($fecha);
-       	$this->paciente = new Paciente($id, $nombre, $apellido);
+       	$this->paciente = new Paciente($id, $nombre, $apellido, $documento);
     }
 
     public function getPaciente(){

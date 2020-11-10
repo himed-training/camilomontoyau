@@ -2,9 +2,10 @@
 class Paciente {
 	public $id;
 	public $nombre;
-	public $apellido;
+    public $apellido;
+    public $documento;
 
-	public function __construct($id, $nombre, $apellido)
+	public function __construct($id, $nombre, $apellido, $documento)
     {  
         if(!$this->nombreValido($nombre)) {
             throw new Exception('Falta nombre');
@@ -15,9 +16,13 @@ class Paciente {
         if(!$this->idValido($id)) {
             throw new Exception('Falta id');
         }
+        if(!$this->DocumentoValido($documento)) {
+            throw new Exception('Falta documento');
+        }
         $this->id       = $id;
         $this->nombre   = $nombre;
         $this->apellido = $apellido;
+        $this->documento = $documento;
     }
 
     public function getId() {
@@ -32,6 +37,10 @@ class Paciente {
         return $this -> apellido;
     }
 
+    public function getDocumento() {
+        return $this -> documento;
+    }
+
     public function nombreValido ($nombre) {
         return strlen($nombre) > 0;
     }
@@ -42,6 +51,10 @@ class Paciente {
 
     public function apellidoValido ($apellido) {
         return strlen($apellido) > 0;
+    }
+
+    public function DocumentoValido ($documento) {
+        return strlen($documento) > 0;
     }
 }
 ?>

@@ -10,10 +10,11 @@
   $id = $data->id;
   $nombre = $data->nombre;
   $apellido = $data->apellido;
+  $documento = $data->documento;
   $fecha = date("d/m/Y");
 
   try {
-    $consulta = new Consulta($id, $nombre, $apellido, $fecha);
+    $consulta = new Consulta($id, $nombre, $apellido, $documento, $fecha);
     if($consulta) {
       http_response_code(200);
       echo json_encode($consulta);
@@ -26,6 +27,7 @@
       case "Falta nombre":
       case "Falta apellido":
       case "Falta id":
+      case "Falta documento":
         http_response_code(400);
       break;
       default:
