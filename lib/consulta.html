@@ -27,6 +27,7 @@
   <label id="id"></label><br>
   <label id="nombre"></label><br>
   <label id="apellido"></label><br>
+  <label id="fecha"></label><br>
   
       </div>
     </div>
@@ -48,9 +49,6 @@
         return false;
     }
 
-    let fecha = $("#txtFecha").val().split('-');
-    fecha = `${fecha[2]}/${fecha[1]}/${fecha[0]}`;
-
     const Datos = {
       id:$("#txtID").val(),
       nombre:$("#txtNom").val(),
@@ -69,11 +67,13 @@
         alert("Ocurrio un problema "+mensaje.error);
       },
       success: function (response) {
+          console.log({response});
           $("#documento,#id,#nombre,#apellido,#fecha").empty();
           $("#documento").append(`<strong>Tipo Documento:</strong> ${response.paciente.documento}`);
           $("#id").append(`<strong>ID:</strong> ${response.paciente.id}`);
           $("#nombre").append(`<strong>Nombre:</strong> ${response.paciente.nombre}`);
           $("#apellido").append(`<strong>Apellido:</strong> ${response.paciente.apellido}`);    
+          $("#fecha").append(`<strong>Fecha:</strong> ${response.fecha.fecha}`);    
       }
     });
   }
